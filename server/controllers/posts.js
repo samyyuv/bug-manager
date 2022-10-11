@@ -1,5 +1,8 @@
+import express from 'express';
 import mongoose from 'mongoose';
 import PostMessage from '../models/postMessage.js';
+
+const router = express.Router();
 
 export const getPosts = async (req, res) => {
   try {
@@ -17,7 +20,7 @@ export const createPost = async (req, res) => {
     await newPost.save();
     res.status(201).json(newPost)
   } catch (error) {
-    res.status(409).json({ message: error.PostMessage });
+    res.status(409).json({ message: error.message });
   }
 }
 
@@ -52,3 +55,5 @@ export const likePost = async (req, res) => {
   const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true })
   res.json(updatedPost)
 }
+
+export default router;
