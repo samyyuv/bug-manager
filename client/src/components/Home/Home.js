@@ -47,7 +47,7 @@ const Home = () => {
     <Grow in>
       <Container maxWidth="xl">
         <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
-          <Grid item xs={12} sm={6} md={9}>
+          <Grid item xs={12} sm={6} md={9} justifyContent="center" alignItems="center" container spacing={0} direction="column" style={{ margin: 'auto 0' }}>
             <Posts setCurrentId={setCurrentId} />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
