@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from "react-router-dom";
 import { Container, Grow, Grid, Paper, AppBar, TextField, Button } from '@material-ui/core';
 import ChipInput from 'material-ui-chip-input';
 
-import { getPosts, getPostsBySearch } from '../../actions/posts';
+import { getPostsBySearch } from '../../actions/posts';
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 import Pagination from "../Pagination";
 import useStyles from './styles';
-//className={classes.pagination}
-
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)

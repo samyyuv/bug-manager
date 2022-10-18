@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Avatar, Button, Paper, Grid, Typography, Container, TextField } from '@material-ui/core';
-import { GoogleLogin, googleLogout } from '@react-oauth/google';
+import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { GoogleLogin } from '@react-oauth/google';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
