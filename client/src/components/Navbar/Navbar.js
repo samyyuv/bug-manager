@@ -15,7 +15,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
-  console.log(user)
+
   const logout = () => {
     dispatch({ type: actionType.LOGOUT })
     history.push('/auth');
