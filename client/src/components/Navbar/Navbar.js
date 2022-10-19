@@ -3,6 +3,7 @@ import { AppBar, Avatar, Button, Toolbar, Typography } from '@material-ui/core';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
+import * as actionType from '../../constants/actionTypes';
 
 import useStyles from './styles';
 import bug from '../../images/bug.png'
@@ -16,8 +17,8 @@ const Navbar = () => {
   const location = useLocation();
 
   const logout = () => {
-    dispatch({ type: 'LOGOUT' })
-    history.push('/');
+    dispatch({ type: actionType.LOGOUT })
+    history.push('/auth');
     setUser(null);
   }
   useEffect(() => {
