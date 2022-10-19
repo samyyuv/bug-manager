@@ -15,20 +15,25 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
-
+  console.log(user)
   const logout = () => {
     dispatch({ type: actionType.LOGOUT })
     history.push('/auth');
     setUser(null);
-  }
+  };
+
   useEffect(() => {
     const token = user?.token;
+    const goAuth = user?.result?.exp
+
     if (token) {
       const decodedToken = decode(token);
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+    } else if (goAuth) {
+      if (goAuth * 1000 < new Date().getTime()) logout();
     }
     setUser(JSON.parse(localStorage.getItem('profile')));
-  }, [location])
+  }, [location]);
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
