@@ -16,6 +16,10 @@ app.use(cors());
 //middleware
 app.use('/posts', postsRoutes);
 app.use('/users', usersRoutes);
+app.get("/", (req, res) => {
+  res.send("APP IS RUNNING.");
+});
+
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
