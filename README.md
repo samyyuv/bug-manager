@@ -8,7 +8,7 @@ App where you can report and manage bugs. You can sign up manually or with googl
 Installation ⚙️:
 ------
 ```
-git@github.com:samyyuv/bug-manager.git
+git clone https://github.com/samyyuv/bug-manager.git
 cd bug-manager
 npm start
 ```
